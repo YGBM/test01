@@ -10,12 +10,19 @@ public class Server {
         ServerSocket server = new ServerSocket(9999);
         Socket client = server.accept();
         while(true){
-        DataInputStream dis  = new DataInputStream(client.getInputStream());
-        String msg = dis.readUTF();
+            try{
+            
+                DataInputStream dis  = new DataInputStream(client.getInputStream());
+                
+                String msg = dis.readUTF();
+                System.out.println(msg);
 
-        DataOutputStream dos = new DataOutputStream(client.getOutputStream());
-        dos.writeUTF("服务器-->> "+msg);
-        dos.flush();            
+                DataOutputStream dos = new DataOutputStream(client.getOutputStream());
+                dos.writeUTF("服务器-->> "+msg);
+                dos.flush(); 
+            }catch(Exception ex){   
+            }finally{
+            }
         }
 
     }

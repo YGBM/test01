@@ -26,6 +26,10 @@
          <artifactId>commons-lang3</artifactId>
          <version>3.6</version>
      </dependency>
-
+    <dependency>
+        <groupId>org.python</groupId>
+        <artifactId>jython</artifactId>
+        <version>2.7.2</version>
+    </dependency>
   </dependencies>
 </project>
